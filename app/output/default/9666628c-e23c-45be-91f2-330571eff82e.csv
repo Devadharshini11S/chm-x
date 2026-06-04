@@ -1,0 +1,2 @@
+scan_id,file_path,type,status,risk,score,sha256,sha256_prev,ssdeep,ssdeep_prev,phash,origin
+9666628c-e23c-45be-91f2-330571eff82e,/tmp/chmx-upload-hyn_j6ry/ssdeepdemo.py,other,new,changed,0.0,4686ac2de0e43a6d1411c99fd292feea181a2837ced6195271b2cf3b8969f92e,,24:c6/G/Bao92E2DklB/9PHk7XiWk/SaXKwoJIWT1k/Pry7m/vD/1Qtl6/PpNC:c6/SBhYFEV9PHRNawoKPOavj1QtOPi,,,

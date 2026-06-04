@@ -1,0 +1,125 @@
+# app/core/models.py
+from datetime import datetime
+from typing import Dict
+
+from pydantic import BaseModel
+from sqlalchemy import (
+    Column,
+    String,
+    Integer,
+    DateTime,
+    ForeignKey,
+    Float,
+    Boolean,
+    Text,
+    Index,
+)
+from sqlalchemy.orm import relationship
+
+from app.core.db import Base, engine
+
+
+# ---------- SQLALCHEMY TABLES ----------
+
+class Case(Base):
+    __tablename__ = "cases"
+
+    id = Column(String, primary_key=True, index=True)      # case number
+    name = Column(String, nullable=False)                  # short title
+    description = Column(Text, nullable=True)              # case description
+    created_at = Column(DateTime, default=datetime.utcnow)
+    assessed_by = Column(String, nullable=True)            # who assessed / examiner
+
+    scans = relationship("Scan", back_populates="case")
+
+
+class Scan(Base):
+    __tablename__ = "scans"
+
+    id = Column(String, primary_key=True, index=True)      # scan_id
+    case_id = Column(String, ForeignKey("cases.id"), index=True)
+    root_path = Column(Text, nullable=False)
+    mode = Column(String, default="monitor")               # baseline / monitor
+    status = Column(String, default="queued")              # queued/running/done/failed
+    started_at = Column(DateTime, nullable=True)
+    finished_at = Column(DateTime, nullable=True)
+
+    total_files = Column(Integer, default=0)
+    new_files = Column(Integer, default=0)
+    modified_files = Column(Integer, default=0)
+    removed_files = Column(Integer, default=0)
+
+    case = relationship("Case", back_populates="scans")
+    files = relationship("ScanFile", back_populates="scan")
+
+
+class ScanFile(Base):
+    __tablename__ = "scan_files"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    scan_id = Column(String, ForeignKey("scans.id"), index=True)
+
+    file_path = Column(Text, index=True)
+    size_bytes = Column(Integer)
+
+    # file system MAC times
+    mtime = Column(DateTime)           # last modified
+    ctime = Column(DateTime)           # created / metadata changed
+    atime = Column(DateTime)           # last accessed
+
+    mime_type = Column(String, nullable=True)
+    author = Column(String, nullable=True)  # from document/image metadata if available
+
+    # hashes (old = baseline, new = current)
+    sha_new = Column(String, index=True)
+    sha_old = Column(String, index=True)
+    fuzzy_new = Column(Text)
+    fuzzy_old = Column(Text)
+
+    similarity_score = Column(Float)
+    status = Column(String)      # new / modified / intact / unknown
+    risk_level = Column(String)  # ok / suspicious_modified / changed
+    is_baseline_match = Column(Boolean, default=False)
+
+    scan = relationship("Scan", back_populates="files")
+
+
+Index("ix_scan_files_path", ScanFile.file_path)
+Index("ix_scan_files_scan_status", ScanFile.scan_id, ScanFile.status)
+#Index("ix_scan_files_sha_new", ScanFile.sha_new)
+
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
+
+
+# ---------- PYDANTIC MODELS (YOUR EXISTING ONES) ----------
+
+class ScanSummary(BaseModel):
+    scan_id: str
+    started_at: datetime
+    finished_at: datetime
+    total_files: int
+    total_matches: int
+    scan_time_ms: int
+    file_types: Dict[str, int]
+    score_buckets: Dict[str, int]
+
+
+class MatchItem(BaseModel):
+    id: str
+    file_path: str
+    file_type: str
+    sha_new: str
+    sha_old: str
+    fuzzy_new: str
+    fuzzy_old: str
+    score: float
+    status: str
+    risk_level: str
+    timestamp: datetime
+
+
+class ScanResponse(BaseModel):
+    summary: ScanSummary
+    matches: list[MatchItem]

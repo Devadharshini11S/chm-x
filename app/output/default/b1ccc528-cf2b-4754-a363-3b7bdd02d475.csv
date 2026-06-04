@@ -1,0 +1,2 @@
+scan_id,file_path,type,status,risk,score,sha256,sha256_prev,ssdeep,ssdeep_prev,phash,origin
+b1ccc528-cf2b-4754-a363-3b7bdd02d475,/home/devadharshini/demotest1/dog.png,image,intact,ok,100.0,07a617d1701d229e1fe6a25855c60ecb7e9e75a0b2505dcfcc46fcf348c4d3a1,07a617d1701d229e1fe6a25855c60ecb7e9e75a0b2505dcfcc46fcf348c4d3a1,3072:ZSSRroXrmSGlQ/I6dxJimC77TvL8uGoa+FsXvvl/nCj1NdWr5UzJ7BN07/09Tgyh:ZXoaHuxSuKatnChNtgybw12,3072:ZSSRroXrmSGlQ/I6dxJimC77TvL8uGoa+FsXvvl/nCj1NdWr5UzJ7BN07/09Tgyh:ZXoaHuxSuKatnChNtgybw12,fa5ac16186e5291f,ai_or_synthetic

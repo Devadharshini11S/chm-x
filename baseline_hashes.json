@@ -1,0 +1,58 @@
+{
+  "/home/devadharshini/Documents/dog.png": {
+    "sha256": "07a617d1701d229e1fe6a25855c60ecb7e9e75a0b2505dcfcc46fcf348c4d3a1",
+    "fuzzy": "3072:ZSSRroXrmSGlQ/I6dxJimC77TvL8uGoa+FsXvvl/nCj1NdWr5UzJ7BN07/09Tgyh:ZXoaHuxSuKatnChNtgybw12"
+  },
+  "/home/devadharshini/Documents/ssdeepdemo.py": {
+    "sha256": "4686ac2de0e43a6d1411c99fd292feea181a2837ced6195271b2cf3b8969f92e",
+    "fuzzy": "24:c6/G/Bao92E2DklB/9PHk7XiWk/SaXKwoJIWT1k/Pry7m/vD/1Qtl6/PpNC:c6/SBhYFEV9PHRNawoKPOavj1QtOPi"
+  },
+  "/home/devadharshini/Documents/dog1.png": {
+    "sha256": "fb66f253364042c806f67afb3c9f0f2f6322528dcfcd23e0aecf2b5c5fa79a1a",
+    "fuzzy": "3072:Z7HDT56UMcQx/x9uKV9j3+eIiiR8fGFeDckmHiKHngpwmQ17Ss72WO:ZzJPMZxZseueI3GDckmHiKHg1Q9DaWO"
+  },
+  "/tmp/chmx-upload-2vh3jss2/ssdeepdemo.py": {
+    "sha256": "4686ac2de0e43a6d1411c99fd292feea181a2837ced6195271b2cf3b8969f92e",
+    "fuzzy": "24:c6/G/Bao92E2DklB/9PHk7XiWk/SaXKwoJIWT1k/Pry7m/vD/1Qtl6/PpNC:c6/SBhYFEV9PHRNawoKPOavj1QtOPi"
+  },
+  "/tmp/chmx-upload-gl3e40u5/dog.png": {
+    "sha256": "07a617d1701d229e1fe6a25855c60ecb7e9e75a0b2505dcfcc46fcf348c4d3a1",
+    "fuzzy": "3072:ZSSRroXrmSGlQ/I6dxJimC77TvL8uGoa+FsXvvl/nCj1NdWr5UzJ7BN07/09Tgyh:ZXoaHuxSuKatnChNtgybw12"
+  },
+  "/tmp/chmx-upload-gl3e40u5/ssdeepdemo.py": {
+    "sha256": "4686ac2de0e43a6d1411c99fd292feea181a2837ced6195271b2cf3b8969f92e",
+    "fuzzy": "24:c6/G/Bao92E2DklB/9PHk7XiWk/SaXKwoJIWT1k/Pry7m/vD/1Qtl6/PpNC:c6/SBhYFEV9PHRNawoKPOavj1QtOPi"
+  },
+  "/tmp/chmx-upload-ueofjvkk/testing": {
+    "sha256": "ff4b7c6714a87fd5e80323420ea7470c9965b33489f26db3e8cd764956f58548",
+    "fuzzy": "3:63Wdiv:63kiv"
+  },
+  "/tmp/chmx-upload-nf5k1kji/test": {
+    "sha256": "13d2bcefebcd5571f2fbf4960f3baaca2bfb29650d1ac540cc763e0d42ee258c",
+    "fuzzy": "3:gW7fn:gWD"
+  },
+  "/tmp/chmx-upload-nf5k1kji/testing": {
+    "sha256": "ff4b7c6714a87fd5e80323420ea7470c9965b33489f26db3e8cd764956f58548",
+    "fuzzy": "3:63Wdiv:63kiv"
+  },
+  "/tmp/chmx-upload-nrd496tx/testing": {
+    "sha256": "ff4b7c6714a87fd5e80323420ea7470c9965b33489f26db3e8cd764956f58548",
+    "fuzzy": "3:63Wdiv:63kiv"
+  },
+  "/tmp/chmx-upload-hbs6s359/test": {
+    "sha256": "5ab7362c4a86f10f2ad4b41f201ea18a1349084a3ecb1afec8fd3348edf8f62c",
+    "fuzzy": "3:gW7fPvn:gWrv"
+  },
+  "/tmp/chmx-upload-v2rakjgg/test": {
+    "sha256": "5ab7362c4a86f10f2ad4b41f201ea18a1349084a3ecb1afec8fd3348edf8f62c",
+    "fuzzy": "3:gW7fPvn:gWrv"
+  },
+  "/home/devadharshini/Documents/test": {
+    "sha256": "14017920cc8a0061b496fac580aa490b65cd9cb0fcd186de0bcbfc1b07b4feb5",
+    "fuzzy": "3:gW7fPvDUk/tRmuiC:gWro6EC"
+  },
+  "/home/devadharshini/Documents/testing": {
+    "sha256": "ff4b7c6714a87fd5e80323420ea7470c9965b33489f26db3e8cd764956f58548",
+    "fuzzy": "3:63Wdiv:63kiv"
+  }
+}
